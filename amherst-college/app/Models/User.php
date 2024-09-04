@@ -20,6 +20,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'bio',
     ];
 
     /**
@@ -44,4 +45,11 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    //protected $appends = ['special_name'];
+
+    public function getSpecialNameAttribute()
+{
+    return 'AC ' . $this->name;
+}
 }
